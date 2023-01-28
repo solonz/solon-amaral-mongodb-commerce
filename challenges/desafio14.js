@@ -1,2 +1,4 @@
-db.produtos.find({ ingredientes: "picles" },
-  { _id: 0 , nome: 1, ingredientes: 1, valoresNutricionais: { $slice: 3 } });
+db.produtos.find({
+  ingredientes: { $all: ["picles"] },
+},
+{ nome: 1, ingredientes: 1, valoresNutricionais: { $slice: 3 }, _id: 0 });
